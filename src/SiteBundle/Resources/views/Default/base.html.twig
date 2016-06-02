@@ -14,8 +14,7 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal-default-theme.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -35,12 +34,20 @@
 </head>
 <body>
 {% block navi %}{% endblock %}
+{% include '@Site/Default/Modules/navi.html.twig' %}
+
 
 
 {% block body %}{% endblock %}
 
 <div class="mobile-menu-overlay hidden"></div>
 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal.js"></script>
+
+<script src="{{ asset('vendor/barba.min.js') }}"></script>
 
 {% block javascripts %}
     {% javascripts '@SiteBundle/Resources/public/src/browser-bundle.js' %}

@@ -34,6 +34,7 @@
     "webpack": "^1.13.0"
   },
   "dependencies": {
+    "barba.js": "0.0.8",
     "bourbon": "^4.2.7",
     "bourbon-neat": "^1.7.4",
     "jquery": "^2.2.3",
