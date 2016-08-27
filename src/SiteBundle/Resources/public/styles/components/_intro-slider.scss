@@ -1,0 +1,55 @@
+
+.intro {
+  width: 100vw;
+  height: calc(100vh - 200px);
+}
+
+.intro__carousel {
+  height: 100%;
+
+  div {
+    height: 100%;
+  }
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+
+  .slide__content {
+    position: relative;
+    height:100%;
+    width: 100%;
+
+    @include flexin(column, center, center);
+    display: none;
+
+    h2 {
+      color: white;
+      padding: 1rem;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+  }
+}
+
+
+
+.slick-arrow {
+  position: absolute;
+  background: none;
+  border: none;
+  z-index: 9999;
+  top: calc(50% - 20px);
+  padding: 1rem;
+
+  &.slick-prev { }
+
+  &.slick-next { right: 0; }
+
+  svg {
+    fill: $blue-secondary;
+    height: 50px;
+  }
+}

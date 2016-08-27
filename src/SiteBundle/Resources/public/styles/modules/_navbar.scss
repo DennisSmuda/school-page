@@ -1,28 +1,17 @@
 
 header {
   position: relative;
-  padding: 1rem;
-  color: $ruby-shade;
-  background-color: $sunflower;
-  border-bottom: 1rem solid $sunflower-shade;
+  color: $blue-primary;
+  background-color: #fff;
 
-  @include display(flex);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
-  @include align-items(center);
-
-  h2, nav.desktop {
-    padding-right: 1rem;
-  }
+  @include flexin(column, flex-start, center);
 
   a {
-    font-weight: 700;
     text-decoration: none;
-    padding: 0.5rem;
     @include transition(all 0.6s);
 
     &:hover {
-      background-color: $ruby-shade;
+
     }
   }
 
@@ -31,8 +20,62 @@ header {
   }
 }
 
-header nav.desktop {
-  @include links($ruby-shade, $light-gray, $ruby-shade, $ruby-shade);
+.header__info-bar {
+  width: 100%;
+  height: 140px;
+  padding: 1rem;
+  @include flexin(row, space-between, center);
+
+  .logo-container { height: 80%;}
+
+  .logo-container a {
+    height: 100%;
+    color: $blue-primary;
+    @include flexin(column, center, center);
+
+    span { padding-top: 0.5rem;}
+  }
+
+}
+header .info-container {
+  height: 100%;
+  @include flexin(row, center, center);
+
+  > div {
+    height: 100%;
+    padding-left: 2rem;
+    @include flexin(row, center, center);
+
+    div:first-child {
+      height: 100%;
+      padding-right: 1rem;
+      @include flexin(column, center, center);
+      svg { height: 35px; fill: $blue-primary; }
+    }
+
+    div:nth-child(2) {
+      @include flexin(column, center, flex-start);
+
+      a:first-child, span:first-child {
+        padding-bottom: 0.25rem;
+      }
+    }
+  }
+
+  a, span {
+    color: $blue-primary;
+  }
+}
+
+
+header nav {
+  width: 100%;
+  height: 60px;
+  background-color: $blue-primary;
+  @include links($light-gray, $white, $light-gray, $light-gray);
+  padding: 1rem;
+
+  @include flexin(row, flex-start, center);
 
   ul {
     list-style-type: none;
@@ -47,10 +90,12 @@ header nav.desktop {
   }
 }
 
+
+
 header nav.mobile {
   z-index: 1000;
-  @include links($light-gray, $ruby-shade, $light-gray, $light-gray);
-  background-color: $ruby;
+  @include links($blue-secondary, $blue-primary, $blue-secondary, $blue-secondary);
+  background-color: lighten($blue-secondary, 10);
   position: fixed;
   width: $mobile-nav-width;
   height: 100vh;
@@ -98,14 +143,14 @@ header .hamburger {
   div {
     height: 3px;
     width: 100%;
-    background-color: #fff;
+    background-color: $blue-secondary;
 
     @include transition(all 0.6s);
   }
 
   &:hover {
     div {
-      background-color: $ruby-shade;
+      background-color: $blue-primary;
     }
   }
 }
@@ -124,5 +169,20 @@ header .hamburger {
 
   &.hidden {
     display: none;
+  }
+}
+
+
+
+
+// Donation Button
+header .donation-button {
+  button {
+    border: none;
+    background-color: $blue-primary;
+    padding: 1rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 }

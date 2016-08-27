@@ -12,7 +12,6 @@ main {
 }
 
 h1 {
-  color: $bittersweet;
   @include transition(all 0.3s);
 }
 
